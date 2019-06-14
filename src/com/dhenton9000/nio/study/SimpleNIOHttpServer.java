@@ -10,8 +10,6 @@ import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -20,6 +18,8 @@ import java.util.Set;
 
 /**
  * https://github.com/jccarrillo/java-nio-http-server
+ * https://github.com/dmliasko/nio-webserver
+ * https://github.com/nmayorov/nio-chat
  *
  */
 public class SimpleNIOHttpServer {
@@ -42,8 +42,8 @@ public class SimpleNIOHttpServer {
         Handler<SelectionKey> acceptHandler = new HttpAcceptHandler(selector);
         Handler<SelectionKey> readHandler = new HttpReadHandler();
         Handler<SelectionKey> writeHandler = new HttpWriteHandler();
-        Collection<SocketChannel> sockets = new ArrayList();
-        System.out.println("Starting " + SingleThreadedSelectorNonBlockingServer.class.getName());
+       // Collection<SocketChannel> sockets = new ArrayList();
+        System.out.println("Starting " + SimpleNIOHttpServer.class.getName());
         while (forever) {
             selector.select();
             System.out.println("dropping out of loop");
