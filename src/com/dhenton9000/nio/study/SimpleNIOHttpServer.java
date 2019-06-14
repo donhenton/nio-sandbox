@@ -5,15 +5,10 @@ import com.dhenton9000.nio.study.handlers.Handler;
 import com.dhenton9000.nio.study.handlers.http.HttpReadHandler;
 import com.dhenton9000.nio.study.handlers.http.HttpWriteHandler;
 import java.net.InetSocketAddress;
-import java.nio.ByteBuffer;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
 import java.nio.channels.ServerSocketChannel;
-import java.nio.channels.SocketChannel;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
-import java.util.Queue;
 import java.util.Set;
 
 /**
@@ -38,7 +33,7 @@ public class SimpleNIOHttpServer {
         Selector selector = Selector.open();
         ssc.register(selector, SelectionKey.OP_ACCEPT); //client is connecting
 
-        Map<SocketChannel, Queue<ByteBuffer>> pendingData = new HashMap<>();
+       // Map<SocketChannel, Queue<ByteBuffer>> pendingData = new HashMap<>();
         Handler<SelectionKey> acceptHandler = new HttpAcceptHandler(selector);
         Handler<SelectionKey> readHandler = new HttpReadHandler();
         Handler<SelectionKey> writeHandler = new HttpWriteHandler();
