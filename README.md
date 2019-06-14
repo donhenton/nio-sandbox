@@ -12,3 +12,5 @@ Configured to use JAVA 10
 * https://github.com/jccarrillo/java-nio-http-server
 * https://github.com/dmliasko/nio-webserver
 * https://github.com/nmayorov/nio-chat
+* https://github.com/obi1kenoby/NIO2-Client-Server-Chat
+* https://github.com/boya-zhou/nio-chatroom
